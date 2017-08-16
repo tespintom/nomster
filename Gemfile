@@ -60,7 +60,9 @@ gem 'simple_form'
 
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
+# this is to add plus sign next to the new place link.  
 
+gem "font-awesome-rails"
 
 
 
