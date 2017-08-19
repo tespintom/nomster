@@ -68,7 +68,6 @@ blockquote {
 }
 
 blockquote:before {
-
   color: #ccc;
   content: open-quote;
   font-size: 4em;
@@ -77,6 +76,6 @@ blockquote:before {
   vertical-align: -0.4em;
 }
 
-blockquore p {
+blockquote p {
   display: inline;
 }
