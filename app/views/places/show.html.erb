@@ -4,19 +4,16 @@
 <br /><br />
 <p><%= @place.description %></p>
 
- <style>
-    #map {
-      height: 300px;
-    }
-  </style>
+ 
 <% if @place.latitude.present? && @place.longitude.present? %>
+
   <script>
 
     function initMap() {
       var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
+        zoom: 4,
         center: myLatLng
       });
 
@@ -26,12 +23,12 @@
         title: 'Hello World!'
       });
     }
-  </script>
 
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANkqHA_lnSQ7vc5meRU76kak8hUlIecUw&callback=initMap">
   </script>
-  
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANkqHA_lnSQ7vc5meRU76kak8hUlIecUw&
+  callback=initMap">
+  </script>
 
   <div id="map"></div>
 <% end %>
