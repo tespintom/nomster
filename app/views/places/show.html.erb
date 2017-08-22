@@ -53,7 +53,7 @@
 <div class="booyah-box col-10 offset-1" >
 <h1 class="float-left">Photos</h1>
 <% if current_user%>
-<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#AddPhotoModal">
   Add a photo
 </button>
 <%end%>
@@ -61,7 +61,7 @@
 </div>
 <!-- modal photo -->
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="AddPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -84,18 +84,21 @@
   </div>
 </div>
 
-
+<div class="clear"></div>
+<% if @place.photos.present? %>
 <div class="row">
+<div class="col-12" >
 <%@place.photos.each do |photo| %>
     <%= image_tag photo.picture %>
-    <%= photo.coaption %>
+    <%= photo.caption %>
     <% end %>
     </div>
+    <% end %>
 
 
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="AddCommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -123,9 +126,11 @@
 <h1 class="float-left">Comments</h1>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
+<% if current_user%>
+<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#AddCommentModal">
   Add a comment
 </button>
+<% end %>
 </div>
 
 <div class="clear"></div>

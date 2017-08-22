@@ -30,7 +30,12 @@ body {
 
  }
 
- .navbar .navar-inverse {
+.navbar .navbar-toggler {
+  background-color: #ffff00;
+  color: #000000;
+}
+
+ .navbar {
 
   background: image_url('cartographer.png');
   box-shadow: 0px 1px 3px #2a2a2a;
